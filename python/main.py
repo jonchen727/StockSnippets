@@ -45,7 +45,14 @@ def fetch_equity_data(symbols):
                 info[key] = format_large_number(value)
             elif is_percentage_field(key) and isinstance(value, float):
                 info[key] = format_percentage(value)
+        # Check if 'sector' exists in info and create sectorIcon URL
+        if 'sector' in info:
+            formatted_sector = info['sector'].replace(" ", "").lower()
+            sector_icon_url = f"https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/{formatted_sector}.svg"
+            info['sectorIcon'] = sector_icon_url
 
+        # Directly append the info dictionary to the list
+        data.append(info)
         # Directly append the info dictionary to the list
         data.append(info)
     return data
