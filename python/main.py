@@ -62,6 +62,6 @@ def save_data_to_json(data, filename="output.json"):
     with open(filename, "w") as file:
         json.dump(data, file, indent=4)
 
-symbols = ["AAPL", "GOOGL", "TSLA", "AMZN"]
+symbols = ["AAPL", "GOOGL", "TSLA", "AMZN","BA", "AVGO", "TSM", "PBR"]
 equity_data = fetch_equity_data(symbols)
 save_data_to_json(equity_data)
