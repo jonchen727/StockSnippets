@@ -2,6 +2,7 @@ import yfinance as yf
 import json
 from datetime import datetime
 import time
+import pycountry
 import os
 
 # Define keywords that indicate a percentage field
@@ -9,6 +10,14 @@ percentage_keywords = ['percent', 'Percent', 'Yield', 'yield', 'payoutRatio', 'M
                         'returnOnEquity', 'returnOnAssets', 'profitMargins', 'Change']
 formatted_percent_keywords = ['debtToEquity', 'fiveYearAvgDividendYield']
 price_keywords = ['fiftyTwoWeek', 'price', 'bid', 'ask']
+
+exchange_dict = {
+    "NMS": 'NASDAQ', 
+    "NCM": 'NASDAQ',
+    "NGM": 'NASDAQ',
+    "NYQ": 'NYSE', 
+    "PNK": 'OTC'
+}
 
 def load_database_data(filename="human.json"):
     if os.path.exists(filename):
@@ -60,6 +69,7 @@ def is_percentage_field(key):
 def is_price_field(key):
     return any(keyword in key for keyword in price_keywords)
 
+
 # Function to fetch equity data and apply conversions
 def fetch_equity_data(symbols, database):
     data = []  # Initialize as an empty list for the array structure
@@ -91,11 +101,18 @@ def fetch_equity_data(symbols, database):
             elif isinstance(value, float):
                 info[key] = f"{value:.2f}"
 
+
         # Check if 'sector' exists in info and create sectorIcon URL
         if 'sector' in info:
             formatted_sector = info['sector'].replace(" ", "").lower()
             sector_icon_url = f"https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/{formatted_sector}.svg"
             info['sectorIcon'] = sector_icon_url
+        if 'country' in info: 
+            code = pycountry.countries.search_fuzzy(info['country'])[0].alpha_2
+            flag_url = f"https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/{code.lower()}.svg"
+            info['flag'] = flag_url
+        if 'exchange' in info:
+            info['exchange_name'] = exchange_dict.get(info['exchange'], info['exchange'])
 
         # Directly append the info dictionary to the list
         data.append(info)
@@ -108,7 +125,7 @@ def save_data_to_json(data, filename="output.json"):
 
 database = load_database_data("database.json")
 
-symbols = ["AAPL", "GOOGL", "TSLA", "AMZN","BA", "AVGO", "TSM", "PBR"]
+symbols = ["AAPL", "GOOGL", "TSLA", "AMZN","BA", "AVGO", "TSM", "PBR", "QQQ"]
 equity_data, database, updated = fetch_equity_data(symbols, database)
 save_data_to_json(equity_data, "output.json")
 
