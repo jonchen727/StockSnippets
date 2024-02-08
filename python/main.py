@@ -7,6 +7,7 @@ import os
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
 import cairosvg
+from vertex import summarize
 
 # Set python script path
 script_path = os.path.dirname(os.path.abspath(__file__))
@@ -158,6 +159,8 @@ def fetch_equity_data(symbols, database):
             info['exchange_name'] = exchange_dict.get(info['exchange'], info['exchange'])
         if 'industry' in info:
             info['industry_pe'] = avg_pe.get(info['industry'], "N/A")
+        if 'longBusinessSummary' in info:
+            info['summary'] = summarize(info['longBusinessSummary'])
 
         # Directly append the info dictionary to the list
         data.append(info)
