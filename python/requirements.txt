@@ -2,3 +2,4 @@ yfinance
 pycountry
 requests
 beautifulsoup4
+cairosvg

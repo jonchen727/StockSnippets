@@ -6,7 +6,10 @@ import pycountry
 import os
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
+import cairosvg
 
+# Set python script path
+script_path = os.path.dirname(os.path.abspath(__file__))
 # Set the URL you want to scrape from
 url = 'https://finviz.com/groups.ashx?g=industry&v=120'
 
@@ -141,12 +144,16 @@ def fetch_equity_data(symbols, database):
         # Check if 'sector' exists in info and create sectorIcon URL
         if 'sector' in info:
             formatted_sector = info['sector'].replace(" ", "").lower()
-            sector_icon_url = f"https://raw.githubusercontent.com/jonchen727/StockSnippets/cdc402e3eb1ffbf064ca84dbed5598e121a312cc/icons/sector/{formatted_sector}.svg"
-            info['sectorIcon'] = sector_icon_url
+            sector_icon_path = os.path.abspath(os.path.join(script_path, '..', 'icons', 'sector'))
+            cairosvg.svg2png(url=f"{sector_icon_path}/{formatted_sector}.svg" , write_to=f"{sector_icon_path}/{formatted_sector}.png")
+            info['svgSectorIcon'] = f"https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/{formatted_sector}.svg"
+            info['pngSectorIcon'] = f"https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/{formatted_sector}.png"
         if 'country' in info: 
             code = pycountry.countries.search_fuzzy(info['country'])[0].alpha_2
-            flag_url = f"https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/{code.lower()}.svg"
-            info['flag'] = flag_url
+            flag_icon_path = os.path.abspath(os.path.join(script_path, '..', 'icons', 'flags'))
+            cairosvg.svg2png(url=f"https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/{code.lower()}.svg", write_to=f"{flag_icon_path}/{code.lower()}.png")
+            info['svg_flag'] = f"https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/{code.lower()}.svg"
+            info['png_flag'] = f"https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/flags/{code.lower()}.png"
         if 'exchange' in info:
             info['exchange_name'] = exchange_dict.get(info['exchange'], info['exchange'])
         if 'industry' in info:
