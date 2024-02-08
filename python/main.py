@@ -1,14 +1,23 @@
 import yfinance as yf
 import json
-from datetime 
-import datetime
+from datetime import datetime
 import time
+import os
 
 # Define keywords that indicate a percentage field
 percentage_keywords = ['percent', 'Percent', 'Yield', 'yield', 'payoutRatio', 'Margins', 'margins',
                         'returnOnEquity', 'returnOnAssets', 'profitMargins', 'Change']
 formatted_percent_keywords = ['debtToEquity', 'fiveYearAvgDividendYield']
 price_keywords = ['fiftyTwoWeek', 'price', 'bid', 'ask']
+
+def load_database_data(filename="human.json"):
+    if os.path.exists(filename):
+        with open(filename, "r") as file:
+            try:
+                return json.load(file)
+            except json.JSONDecodeError:
+                return {}
+    return {}
 
 # Helper function to convert Unix timestamps to human-readable dates
 def timestamp_to_date(timestamp):
@@ -52,14 +61,20 @@ def is_price_field(key):
     return any(keyword in key for keyword in price_keywords)
 
 # Function to fetch equity data and apply conversions
-def fetch_equity_data(symbols):
+def fetch_equity_data(symbols, database):
     data = []  # Initialize as an empty list for the array structure
-    human = {}
+    updated = False
     for symbol in symbols:
-        ticker = yf.Ticker(symbol)
-        time.sleep(1)
-        info = ticker.info.copy()
-        human[symbol] = ticker.info
+        if symbol in database:
+            # Use existing data
+            info = database[symbol]
+        else:
+            # Fetch new data
+            ticker = yf.Ticker(symbol)
+            time.sleep(1)
+            database[symbol] = ticker.info
+            info = ticker.info.copy()
+            updated = True
 
         # Apply conversions for specific keys
         for key, value in info.items():
@@ -73,6 +88,8 @@ def fetch_equity_data(symbols):
                 info[key] = format_percentage(value)
             elif is_price_field(key) and isinstance(value, float):
                 info[key] = format_price(value)
+            elif isinstance(value, float):
+                info[key] = f"{value:.2f}"
 
         # Check if 'sector' exists in info and create sectorIcon URL
         if 'sector' in info:
@@ -82,15 +99,20 @@ def fetch_equity_data(symbols):
 
         # Directly append the info dictionary to the list
         data.append(info)
-    return data, human
+    return data, database, updated
 
 # Function to save data to a JSON file
 def save_data_to_json(data, filename="output.json"):
     with open(filename, "w") as file:
         json.dump(data, file, indent=4)
 
+database = load_database_data("database.json")
+
 symbols = ["AAPL", "GOOGL", "TSLA", "AMZN","BA", "AVGO", "TSM", "PBR"]
-equity_data = fetch_equity_data(symbols)
-save_data_to_json(equity_data[0], "output.json")
-save_data_to_json(equity_data[1], "human.json")
+equity_data, database, updated = fetch_equity_data(symbols, database)
+save_data_to_json(equity_data, "output.json")
+
+if updated:
+    save_data_to_json(database, "database.json")
+
 
