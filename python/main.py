@@ -4,28 +4,42 @@ from datetime import datetime
 import time
 import pycountry
 import os
-import requests
 from bs4 import BeautifulSoup
+from urllib.request import Request, urlopen
 
-# Url for industry average PE
-pe_url = 'https://fullratio.com/pe-ratio-by-industry'
-response = requests.get(pe_url)
-soup = BeautifulSoup(response.text, 'html.parser')
+# Set the URL you want to scrape from
+url = 'https://finviz.com/groups.ashx?g=industry&v=120'
+
+# Create a request object with a User-Agent header
+req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+
+# Open the URL and read the response content into a variable
+response = urlopen(req)
+
+# Read the response content and decode it (if needed)
+content = response.read().decode('utf-8')
+
+# Use BeautifulSoup to parse the HTML content
+soup = BeautifulSoup(content, 'html.parser')
 avg_pe = {}
-table = table = soup.find('table', class_='table table-striped mt-3 mb-3 metric-by-industry')
+#print(response)
+table = soup.find('table', class_="styled-table-new is-medium is-rounded is-tabular-nums w-full groups_table")
 if table:
     # Loop through each row in the table, skipping the header row
     for row in table.find_all('tr')[1:]:
         # Extract the columns (cells) in the row
         columns = row.find_all('td')
         if len(columns) >= 3:  # Ensure there are enough columns for industry, PE ratio, and number of companies
-            industry = columns[0].text.strip()
-            pe_ratio = columns[1].text.strip()
+            industry = columns[1].text.strip()
+            pe_ratio = columns[4].text.strip()
             # Optionally, you can also extract the number of companies
             # number_of_companies = columns[2].text.strip()
             
             # Add the extracted data to the dictionary
             avg_pe[industry] = pe_ratio
+else:
+    print("Table not found")
+#print(avg_pe)
 
 # Define keywords that indicate a percentage field
 percentage_keywords = ['percent', 'Percent', 'Yield', 'yield', 'payoutRatio', 'Margins', 'margins',
