@@ -4,6 +4,28 @@ from datetime import datetime
 import time
 import pycountry
 import os
+import requests
+from bs4 import BeautifulSoup
+
+# Url for industry average PE
+pe_url = 'https://fullratio.com/pe-ratio-by-industry'
+response = requests.get(pe_url)
+soup = BeautifulSoup(response.text, 'html.parser')
+avg_pe = {}
+table = table = soup.find('table', class_='table table-striped mt-3 mb-3 metric-by-industry')
+if table:
+    # Loop through each row in the table, skipping the header row
+    for row in table.find_all('tr')[1:]:
+        # Extract the columns (cells) in the row
+        columns = row.find_all('td')
+        if len(columns) >= 3:  # Ensure there are enough columns for industry, PE ratio, and number of companies
+            industry = columns[0].text.strip()
+            pe_ratio = columns[1].text.strip()
+            # Optionally, you can also extract the number of companies
+            # number_of_companies = columns[2].text.strip()
+            
+            # Add the extracted data to the dictionary
+            avg_pe[industry] = pe_ratio
 
 # Define keywords that indicate a percentage field
 percentage_keywords = ['percent', 'Percent', 'Yield', 'yield', 'payoutRatio', 'Margins', 'margins',
@@ -113,6 +135,8 @@ def fetch_equity_data(symbols, database):
             info['flag'] = flag_url
         if 'exchange' in info:
             info['exchange_name'] = exchange_dict.get(info['exchange'], info['exchange'])
+        if 'industry' in info:
+            info['industry_pe'] = avg_pe.get(info['industry'], "N/A")
 
         # Directly append the info dictionary to the list
         data.append(info)

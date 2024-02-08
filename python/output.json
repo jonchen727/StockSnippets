@@ -231,7 +231,8 @@
         "trailingPegRatio": "2.33",
         "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/technology.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
-        "exchange_name": "NASDAQ"
+        "exchange_name": "NASDAQ",
+        "industry_pe": "N/A"
     },
     {
         "address1": "1600 Amphitheatre Parkway",
@@ -464,7 +465,8 @@
         "trailingPegRatio": "1.39",
         "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/communicationservices.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
-        "exchange_name": "NASDAQ"
+        "exchange_name": "NASDAQ",
+        "industry_pe": "23.02"
     },
     {
         "address1": "1 Tesla Road",
@@ -687,7 +689,8 @@
         "trailingPegRatio": "2.06",
         "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/consumercyclical.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
-        "exchange_name": "NASDAQ"
+        "exchange_name": "NASDAQ",
+        "industry_pe": "23.87"
     },
     {
         "address1": "410 Terry Avenue North",
@@ -916,7 +919,8 @@
         "trailingPegRatio": "2.46",
         "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/consumercyclical.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
-        "exchange_name": "NASDAQ"
+        "exchange_name": "NASDAQ",
+        "industry_pe": "22.6"
     },
     {
         "address1": "929 Long Bridge Drive",
@@ -1143,7 +1147,8 @@
         "trailingPegRatio": null,
         "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/industrials.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
-        "exchange_name": "NYSE"
+        "exchange_name": "NYSE",
+        "industry_pe": "25.99"
     },
     {
         "address1": "3421 Hillview Ave",
@@ -1370,7 +1375,8 @@
         "trailingPegRatio": "1.84",
         "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/technology.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
-        "exchange_name": "NASDAQ"
+        "exchange_name": "NASDAQ",
+        "industry_pe": "30.81"
     },
     {
         "address1": "Hsinchu Science Park",
@@ -1579,7 +1585,8 @@
         "trailingPegRatio": "1.33",
         "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/technology.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/tw.svg",
-        "exchange_name": "NYSE"
+        "exchange_name": "NYSE",
+        "industry_pe": "30.81"
     },
     {
         "address1": "Avenida RepUblica do Chile, 65",
@@ -1797,7 +1804,8 @@
         "trailingPegRatio": null,
         "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/energy.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/br.svg",
-        "exchange_name": "NYSE"
+        "exchange_name": "NYSE",
+        "industry_pe": "9.01"
     },
     {
         "longBusinessSummary": "To maintain the correspondence between the composition and weights of the securities in the trust (the \"securities\") and the stocks in the NASDAQ-100 Index\u00ae, the adviser adjusts the securities from time to time to conform to periodic changes in the identity and/or relative weights of index securities. The composition and weighting of the securities portion of a portfolio deposit are also adjusted to conform to changes in the index.",

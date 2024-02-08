@@ -1,2 +1,4 @@
 yfinance
 pycountry
+requests
+beautifulsoup4
