@@ -1,6 +1,8 @@
 import yfinance as yf
 import json
-from datetime import datetime
+from datetime 
+import datetime
+import time
 
 # Define keywords that indicate a percentage field
 percentage_keywords = ['percent', 'Percent', 'Yield', 'yield', 'payoutRatio', 'Margins', 'margins',
@@ -29,11 +31,16 @@ def format_large_number(num):
 def format_percentage(value):
     return f"{value * 100:.2f}%"
 
+def format_price(value):
+    return f"{value:.2f}"
 # Helper function to add suffix to formatted percents
 def add_percent_suffix(value):
     return f"{value}%"
 
-def is_precent_suffix_field(key):
+def is_price_field(key):
+    return any(keyword in key for keyword in price_keywords)
+
+def is_percent_suffix_field(key):
     return any(keyword in key for keyword in formatted_percent_keywords)
 
 # Check if key indicates a percentage field
@@ -50,6 +57,7 @@ def fetch_equity_data(symbols):
     human = {}
     for symbol in symbols:
         ticker = yf.Ticker(symbol)
+        time.sleep(1)
         info = ticker.info.copy()
         human[symbol] = ticker.info
 
@@ -59,10 +67,12 @@ def fetch_equity_data(symbols):
                 info[key] = timestamp_to_date(value)
             elif isinstance(value, (int, float)) and value >= 1000 and not (is_percentage_field(key) or is_price_field(key)):
                 info[key] = format_large_number(value)
-            elif is_precent_suffix_field(key) and isinstance(value, float):
+            elif is_percent_suffix_field(key) and isinstance(value, float):
                 info[key] = add_percent_suffix(value)
             elif is_percentage_field(key) and isinstance(value, float):
                 info[key] = format_percentage(value)
+            elif is_price_field(key) and isinstance(value, float):
+                info[key] = format_price(value)
 
         # Check if 'sector' exists in info and create sectorIcon URL
         if 'sector' in info:
