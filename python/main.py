@@ -53,8 +53,6 @@ def fetch_equity_data(symbols):
 
         # Directly append the info dictionary to the list
         data.append(info)
-        # Directly append the info dictionary to the list
-        data.append(info)
     return data
 
 # Function to save data to a JSON file
