@@ -229,7 +229,7 @@
         "operatingMargins": "33.76%",
         "financialCurrency": "USD",
         "trailingPegRatio": "2.33",
-        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/technology.svg",
+        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/cdc402e3eb1ffbf064ca84dbed5598e121a312cc/icons/sector/technology.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
         "exchange_name": "NASDAQ",
         "industry_pe": "25.94"
@@ -463,7 +463,7 @@
         "operatingMargins": "28.85%",
         "financialCurrency": "USD",
         "trailingPegRatio": "1.39",
-        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/communicationservices.svg",
+        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/cdc402e3eb1ffbf064ca84dbed5598e121a312cc/icons/sector/communicationservices.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
         "exchange_name": "NASDAQ",
         "industry_pe": "19.43"
@@ -687,7 +687,7 @@
         "operatingMargins": "8.20%",
         "financialCurrency": "USD",
         "trailingPegRatio": "2.06",
-        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/consumercyclical.svg",
+        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/cdc402e3eb1ffbf064ca84dbed5598e121a312cc/icons/sector/consumercyclical.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
         "exchange_name": "NASDAQ",
         "industry_pe": "14.42"
@@ -917,7 +917,7 @@
         "operatingMargins": "7.52%",
         "financialCurrency": "USD",
         "trailingPegRatio": "2.46",
-        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/consumercyclical.svg",
+        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/cdc402e3eb1ffbf064ca84dbed5598e121a312cc/icons/sector/consumercyclical.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
         "exchange_name": "NASDAQ",
         "industry_pe": "23.89"
@@ -1145,7 +1145,7 @@
         "operatingMargins": "2.59%",
         "financialCurrency": "USD",
         "trailingPegRatio": null,
-        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/industrials.svg",
+        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/cdc402e3eb1ffbf064ca84dbed5598e121a312cc/icons/sector/industrials.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
         "exchange_name": "NYSE",
         "industry_pe": "19.64"
@@ -1373,7 +1373,7 @@
         "operatingMargins": "31.77%",
         "financialCurrency": "USD",
         "trailingPegRatio": "1.84",
-        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/technology.svg",
+        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/cdc402e3eb1ffbf064ca84dbed5598e121a312cc/icons/sector/technology.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
         "exchange_name": "NASDAQ",
         "industry_pe": "23.45"
@@ -1583,7 +1583,7 @@
         "operatingMargins": "41.60%",
         "financialCurrency": "TWD",
         "trailingPegRatio": "1.33",
-        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/technology.svg",
+        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/cdc402e3eb1ffbf064ca84dbed5598e121a312cc/icons/sector/technology.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/tw.svg",
         "exchange_name": "NYSE",
         "industry_pe": "23.45"
@@ -1802,7 +1802,7 @@
         "operatingMargins": "40.99%",
         "financialCurrency": "BRL",
         "trailingPegRatio": null,
-        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/energy.svg",
+        "sectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/cdc402e3eb1ffbf064ca84dbed5598e121a312cc/icons/sector/energy.svg",
         "flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/br.svg",
         "exchange_name": "NYSE",
         "industry_pe": "8.23"

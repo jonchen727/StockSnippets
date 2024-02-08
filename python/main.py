@@ -141,7 +141,7 @@ def fetch_equity_data(symbols, database):
         # Check if 'sector' exists in info and create sectorIcon URL
         if 'sector' in info:
             formatted_sector = info['sector'].replace(" ", "").lower()
-            sector_icon_url = f"https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/{formatted_sector}.svg"
+            sector_icon_url = f"https://raw.githubusercontent.com/jonchen727/StockSnippets/cdc402e3eb1ffbf064ca84dbed5598e121a312cc/icons/sector/{formatted_sector}.svg"
             info['sectorIcon'] = sector_icon_url
         if 'country' in info: 
             code = pycountry.countries.search_fuzzy(info['country'])[0].alpha_2
