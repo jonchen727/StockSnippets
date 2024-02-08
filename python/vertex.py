@@ -30,9 +30,9 @@ def summarize(
     
     while attempts < max_retries:
         response = model.predict(prompt, **parameters)
-        
-        if response.text:
-            return response.text
+        response_text = response.text.strip()
+        if response_text:
+            return response_text
         else:
             attempts += 1
             print(f"Attempt {attempts} failed, retrying...")

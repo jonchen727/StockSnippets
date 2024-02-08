@@ -161,7 +161,7 @@ def fetch_equity_data(symbols, database):
         if 'industry' in info:
             info['industry_pe'] = avg_pe.get(info['industry'], "N/A")
         if 'longBusinessSummary' in info:
-            info['summary'] = summarize(info['longBusinessSummary'])
+            info['summary'] = summarize(info['longBusinessSummary'], max_output_tokens=128)
 
         # Directly append the info dictionary to the list
         data.append(info)
