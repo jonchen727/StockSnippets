@@ -237,7 +237,7 @@
         "svg_flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
         "png_flag": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/flags/us.png",
         "industry_pe": "25.75",
-        "summary": "Apple Inc. is a multinational corporation that designs, manufactures, and markets consumer electronics, computer software, and online services. The company's best-known hardware products are the iPhone, iPad, and Mac. Apple's software includes the macOS operating system, the iOS mobile operating system, and the iTunes media player. The company also offers a variety of online services, including the App Store, iCloud, and Apple Music."
+        "summary": " Apple Inc. is a leading technology company that designs, manufactures, and sells a wide range of electronic devices, including iPhones, Mac computers, iPads, and wearables. Their products and services have transformed industries and revolutionized user experiences with innovative software, user-friendly interfaces, and a focus on design and integration."
     },
     {
         "address1": "1600 Amphitheatre Parkway",
@@ -475,8 +475,8 @@
         "pngSectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/communicationservices.png",
         "svg_flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
         "png_flag": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/flags/us.png",
-        "industry_pe": "19.37",
-        "summary": "Alphabet Inc. is a multinational conglomerate holding company that was formed in 2015. It is the parent company of Google, YouTube, Android, and many other subsidiaries. The company's products and services are used by billions of people around the world."
+        "industry_pe": "19.39",
+        "summary": " Alphabet Inc., the parent company of Google, offers various products and services through its three segments: Google Services, Google Cloud, and Other Bets. These include advertising, operating systems, productivity tools, cloud computing services, and healthcare-related services."
     },
     {
         "address1": "1 Tesla Road",
@@ -705,7 +705,7 @@
         "svg_flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
         "png_flag": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/flags/us.png",
         "industry_pe": "14.57",
-        "summary": ""
+        "summary": " Tesla, Inc. designs, develops, manufactures, and sells electric vehicles, as well as energy generation and storage systems. It operates in two segments: Automotive, offering electric vehicles and related services, and Energy Generation and Storage, providing solar energy generation and energy storage products and services."
     },
     {
         "address1": "410 Terry Avenue North",
@@ -939,8 +939,8 @@
         "pngSectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/consumercyclical.png",
         "svg_flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
         "png_flag": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/flags/us.png",
-        "industry_pe": "23.88",
-        "summary": "Amazon.com is an online retailer that sells consumer products, advertising, and subscriptions. The company also manufactures and sells electronic devices, develops and produces media content, and offers programs that enable sellers to sell their products in its stores."
+        "industry_pe": "23.92",
+        "summary": " Amazon.com operates as an e-commerce giant focused on retailing consumer goods, advertising, and subscription services through its online presence. The company sells its merchandise and facilitates third-party sellers' products through its retail platforms in different geographic segments, including North America, International, and Amazon Web Services (AWS)."
     },
     {
         "address1": "929 Long Bridge Drive",
@@ -1172,8 +1172,8 @@
         "pngSectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/industrials.png",
         "svg_flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
         "png_flag": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/flags/us.png",
-        "industry_pe": "19.56",
-        "summary": "Boeing is a multinational corporation that designs, develops, manufactures, sells, services and supports commercial jetliners, military aircraft, satellites, missile defense, human space flight and launch systems, and services worldwide. The company operates through three segments: Commercial Airplanes, Defense, Space & Security, and Global Services."
+        "industry_pe": "19.55",
+        "summary": " Boeing Company engages in designing, developing, producing, selling, servicing, and supporting commercial jetliners, military aircraft, satellites, missile defense, human space flight and launch systems, and services worldwide. It operates through three segments: Commercial Airplanes, Defense, Space & Security, and Global Services."
     },
     {
         "address1": "3421 Hillview Ave",
@@ -1405,8 +1405,8 @@
         "pngSectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/technology.png",
         "svg_flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
         "png_flag": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/flags/us.png",
-        "industry_pe": "24.05",
-        "summary": "Broadcom Inc. is a global leader in semiconductor devices. The company designs, develops, and supplies a wide range of complex digital and mixed signal complementary metal oxide semiconductor based devices and analog III-V based products. Broadcom's products are used in a variety of applications, including enterprise and data center networking, home connectivity, set-top boxes, broadband access, telecommunication equipment, smartphones and base stations, data center servers and storage systems, factory automation, power generation and alternative energy systems, and electronic displays."
+        "industry_pe": "23.97",
+        "summary": " Broadcom Inc., headquartered in Palo Alto, California, designs, develops, and supplies a wide array of semiconductor devices, including analog, digital and mixed-signal chips. The company's products are used in various applications like data centers, networking, telecommunications, industrial automation, alternative energy systems and electronic displays."
     },
     {
         "address1": "Hsinchu Science Park",
@@ -1620,8 +1620,8 @@
         "pngSectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/technology.png",
         "svg_flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/tw.svg",
         "png_flag": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/flags/tw.png",
-        "industry_pe": "24.05",
-        "summary": "Taiwan Semiconductor Manufacturing Company Limited (TSMC) is a Taiwanese multinational semiconductor manufacturing company headquartered in Hsinchu City, Taiwan. It provides complementary metal oxide silicon wafer fabrication processes to manufacture logic, mixed-signal, radio frequency, and embedded memory semiconductors. TSMC is the world's largest semiconductor foundry company by revenue."
+        "industry_pe": "23.97",
+        "summary": " Taiwan Semiconductor Manufacturing Company (TSMC) is a leading semiconductor manufacturer that provides integrated circuits and other semiconductor devices to customers worldwide. The company manufactures logic, mixed-signal, radio frequency, and embedded memory semiconductors, and also offers customer support and engineering services."
     },
     {
         "address1": "Avenida RepUblica do Chile, 65",
@@ -1844,8 +1844,8 @@
         "pngSectorIcon": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/sector/energy.png",
         "svg_flag": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/br.svg",
         "png_flag": "https://raw.githubusercontent.com/jonchen727/StockSnippets/main/icons/flags/br.png",
-        "industry_pe": "8.24",
-        "summary": "Petrobras is an oil and gas company headquartered in Rio de Janeiro, Brazil. It explores, produces, and sells oil and gas in Brazil and internationally. The company operates through three segments: Exploration and Production, Refining, Transportation and Marketing, and Gas and Power."
+        "industry_pe": "8.25",
+        "summary": " Petrobras is a Brazilian oil and gas company involved in exploration, production, refining, transportation, and marketing of oil and gas products, as well as electricity generation and distribution. It has operations in Brazil and internationally, and also produces biodiesel, ethanol, and other energy-related products."
     },
     {
         "longBusinessSummary": "To maintain the correspondence between the composition and weights of the securities in the trust (the \"securities\") and the stocks in the NASDAQ-100 Index\u00ae, the adviser adjusts the securities from time to time to conform to periodic changes in the identity and/or relative weights of index securities. The composition and weighting of the securities portion of a portfolio deposit are also adjusted to conform to changes in the index.",
@@ -1901,6 +1901,6 @@
         "gmtOffSetMilliseconds": -18000000,
         "trailingPegRatio": null,
         "exchange_name": "NASDAQ",
-        "summary": "The securities in the trust are adjusted to conform to periodic changes in the identity and/or relative weights of index securities. The composition and weighting of the securities portion of a portfolio deposit are also adjusted to conform to changes in the index."
+        "summary": " The advisor adjusts the composition and weights of the securities in the trust to match the NASDAQ-100 Index periodically. The composition and weighting of the securities portion of a portfolio deposit are also adjusted to reflect changes in the index."
     }
 ]

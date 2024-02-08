@@ -115,19 +115,20 @@ def fetch_equity_data(symbols, database):
     data = []  # Initialize as an empty list for the array structure
     updated = False
     for symbol in symbols:
+        time.sleep(1)
         if symbol in database:
             # Use existing data
             info = database[symbol]
         else:
             # Fetch new data
             ticker = yf.Ticker(symbol)
-            time.sleep(1)
             database[symbol] = ticker.info
             info = ticker.info.copy()
             updated = True
 
         # Apply conversions for specific keys
         for key, value in info.items():
+
             if 'date' in key or 'Date' in key and isinstance(value, int):
                 info[key] = timestamp_to_date(value)
             elif isinstance(value, (int, float)) and value >= 1000 and not (is_percentage_field(key) or is_price_field(key)):

@@ -5,6 +5,7 @@ def summarize(
     text_to_summarize: str, 
     temperature: float = 0.95, 
     max_output_tokens: int = 256,
+    max_retries: int = 3
 ) -> str:
     """Enhanced Summarization Example with a Large Language Model using Vertex AI"""
     
@@ -23,9 +24,18 @@ def summarize(
     prompt = f"""Provide a summary with about two sentences for the following article:\n{text_to_summarize}\nSummary:"""
 
     # Load the model
-    model = TextGenerationModel.from_pretrained("text-bison@001")
-
-    # Get the model's prediction
-    response = model.predict(prompt, **parameters)
-
-    return response.text
+    model = TextGenerationModel.from_pretrained("text-bison")
+    attempts = 0
+    response = None
+    
+    while attempts < max_retries:
+        response = model.predict(prompt, **parameters)
+        
+        if response.text:
+            return response.text
+        else:
+            attempts += 1
+            print(f"Attempt {attempts} failed, retrying...")
+    
+    print("Failed to get a non-empty response after maximum retries.")
+    return ""
