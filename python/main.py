@@ -118,13 +118,15 @@ def is_price_field(key):
 
 # Function to fetch equity data and apply conversions
 def fetch_data(symbols, database, quarter, kind):
+    global updated
     data = []  # Initialize as an empty list for the array structure
     if quarter not in database:
         database[quarter] = {}
     if kind not in database[quarter]:
         database[quarter][kind] = {}
+    
     kind_database = database[quarter][kind]
-    updated = False
+
     for symbol in symbols:
         time.sleep(1)
         if symbol in kind_database:
@@ -174,12 +176,12 @@ def fetch_data(symbols, database, quarter, kind):
         if 'industry' in info:
             info['industry_pe'] = avg_pe.get(info['industry'], "N/A")
         if 'longBusinessSummary' in info:
-            info['summary'] = summarize(info['longBusinessSummary'], max_output_tokens=128)
+            info['summary'] = summarize(info['longBusinessSummary'], max_output_tokens=30)
 
         info['quarter'] = quarter
         # Directly append the info dictionary to the list
         data.append(info)
-    return data, database, updated
+    return data, database
 
 # Function to save data to a JSON file
 def save_data_to_json(data, filename="output.json"):
@@ -192,11 +194,11 @@ if os.path.exists("input.json"):
 
 
 database = load_database_data("database.json")
-
+updated = False
 for key in input.keys():
     for kind in input[key].keys():
         symbols = input[key][kind]
-        data, database, updated = fetch_data(symbols, database, key, kind)
+        data, database = fetch_data(symbols, database, key, kind)
         save_data_to_json(data, f"outputs/{key}-{kind}-output.json")
 
 if updated:

@@ -53,7 +53,7 @@
         "gmtOffSetMilliseconds": -18000000,
         "trailingPegRatio": null,
         "exchange_name": "PCX",
-        "summary": "The Trust aims to replicate the performance of a benchmark index by holding the same stocks in similar proportions as the index. The Trust's portfolio primarily comprises common stocks included in the index, and the weighting of each stock in the portfolio closely mirrors its weighting in the index.",
+        "summary": "The Trust's investment objective is to track the performance of an index by holding a portfolio of the common stocks that are included in the index, with weightings that substantially correspond to the weightings of those stocks in the index.",
         "quarter": "Q1-24"
     },
     {
@@ -110,7 +110,7 @@
         "gmtOffSetMilliseconds": -18000000,
         "trailingPegRatio": null,
         "exchange_name": "NASDAQ",
-        "summary": "The advisor adjusts the securities in the trust to maintain correspondence between the composition and weights of the securities and the stocks in the NASDAQ-100 Index. Periodic adjustments are made to conform to changes in the index.",
+        "summary": "The advisor adjusts the securities in the trust to maintain correspondence between the composition and weights of the securities and the stocks in the NASDAQ-100 Index. Periodic adjustments are made to conform to changes in the index, including changes in the identity and",
         "quarter": "Q1-24"
     },
     {
@@ -168,7 +168,7 @@
         "gmtOffSetMilliseconds": -18000000,
         "trailingPegRatio": null,
         "exchange_name": "PCX",
-        "summary": "This fund primarily invests in securities comprising its underlying index or economically similar investments (like depositary receipts), allocating at least 80% of its assets to these holdings. Additionally, it may use up to 20% of its assets in futures, options, swaps, cash, and cash equivalents.",
+        "summary": "This fund seeks to track the performance of an underlying index by investing at least 80% of its assets in the index's components or economically identical investments. It may also allocate up to 20% of its assets to cash and cash",
         "quarter": "Q1-24"
     }
 ]
