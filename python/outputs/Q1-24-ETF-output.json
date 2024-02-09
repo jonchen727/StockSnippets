@@ -53,7 +53,7 @@
         "gmtOffSetMilliseconds": -18000000,
         "trailingPegRatio": null,
         "exchange_name": "PCX",
-        "summary": "The Trust attempts to track the Russell 1000 Index by investing in a portfolio of the common stocks included in the index, with each stock's weight in the portfolio roughly matching its weight in the index. The Trust employs a passive management approach, seeking to replicate the performance of the index rather than actively select stocks.",
+        "summary": "The Trust aims to replicate the performance of a benchmark index by holding the same stocks in similar proportions as the index. The Trust's portfolio primarily comprises common stocks included in the index, and the weighting of each stock in the portfolio closely mirrors its weighting in the index.",
         "quarter": "Q1-24"
     },
     {
@@ -110,7 +110,7 @@
         "gmtOffSetMilliseconds": -18000000,
         "trailingPegRatio": null,
         "exchange_name": "NASDAQ",
-        "summary": "The advisor adjusts the composition and weights of the securities in the trust to match the NASDAQ-100 Index. \nThese adjustments are made to ensure that the portfolio deposit corresponds with the index's periodic changes.",
+        "summary": "The advisor adjusts the securities in the trust to maintain correspondence between the composition and weights of the securities and the stocks in the NASDAQ-100 Index. Periodic adjustments are made to conform to changes in the index.",
         "quarter": "Q1-24"
     },
     {
@@ -168,7 +168,7 @@
         "gmtOffSetMilliseconds": -18000000,
         "trailingPegRatio": null,
         "exchange_name": "PCX",
-        "summary": "This fund primarily invests in the securities of its underlying index and similar depositary receipts, aiming to track its performance. Up to 20% of its assets may be allocated to derivatives, cash, and cash equivalents for tactical purposes.",
+        "summary": "This fund primarily invests in securities comprising its underlying index or economically similar investments (like depositary receipts), allocating at least 80% of its assets to these holdings. Additionally, it may use up to 20% of its assets in futures, options, swaps, cash, and cash equivalents.",
         "quarter": "Q1-24"
     }
 ]

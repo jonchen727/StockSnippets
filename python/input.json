@@ -1,16 +1,18 @@
 {
   "Q1-24": {
     "EQUITY" : [
-      "AAPL", 
-      "GOOGL", 
-      "TSLA", 
-      "AMZN",
-      "BA", 
-      "AVGO", 
-      "TSM", 
-      "PBR",
-      "ROKU",
-      "NFLX"
+      "EXAS",
+      "ODFL",
+      "IDXX",
+      "GNRC",
+      "PAYC",
+      "HEI",
+      "POOL",
+      "CTLT",
+      "SNPS",
+      "EPAM"
+
+
     ],
     "ETF": [
       "SPY",
