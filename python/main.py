@@ -8,6 +8,11 @@ from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
 import cairosvg
 from vertex import summarize
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-quarter", "--quarter", dest = "quarter", default="Q#-YY", help="Quarter and Year i.e. Q1-24" )
+args = parser.parse_args
 
 # Set python script path
 script_path = os.path.dirname(os.path.abspath(__file__))
@@ -56,10 +61,11 @@ exchange_dict = {
     "NCM": 'NASDAQ',
     "NGM": 'NASDAQ',
     "NYQ": 'NYSE', 
-    "PNK": 'OTC'
+    "PNK": 'OTC',
+    "PXC": 'NYSE'
 }
 
-def load_database_data(filename="human.json"):
+def load_database_data(filename="database.json"):
     if os.path.exists(filename):
         with open(filename, "r") as file:
             try:
@@ -111,19 +117,26 @@ def is_price_field(key):
 
 
 # Function to fetch equity data and apply conversions
-def fetch_equity_data(symbols, database):
+def fetch_data(symbols, database, quarter, kind):
     data = []  # Initialize as an empty list for the array structure
+    if quarter not in database:
+        database[quarter] = {}
+    if kind not in database[quarter]:
+        database[quarter][kind] = {}
+    kind_database = database[quarter][kind]
     updated = False
     for symbol in symbols:
         time.sleep(1)
-        if symbol in database:
+        if symbol in kind_database:
             # Use existing data
-            info = database[symbol]
+            info = kind_database[symbol]
+            print("Using Data from Database for", symbol)
         else:
             # Fetch new data
             ticker = yf.Ticker(symbol)
-            database[symbol] = ticker.info
+            kind_database[symbol] = ticker.info
             info = ticker.info.copy()
+            print("Not in Database Fetching Data for", symbol)
             updated = True
 
         # Apply conversions for specific keys
@@ -163,6 +176,7 @@ def fetch_equity_data(symbols, database):
         if 'longBusinessSummary' in info:
             info['summary'] = summarize(info['longBusinessSummary'], max_output_tokens=128)
 
+        info['quarter'] = quarter
         # Directly append the info dictionary to the list
         data.append(info)
     return data, database, updated
@@ -172,11 +186,18 @@ def save_data_to_json(data, filename="output.json"):
     with open(filename, "w") as file:
         json.dump(data, file, indent=4)
 
+if os.path.exists("input.json"):
+    with open("input.json", "r") as file:
+        input = json.load(file)
+
+
 database = load_database_data("database.json")
 
-symbols = ["AAPL", "GOOGL", "TSLA", "AMZN","BA", "AVGO", "TSM", "PBR", "QQQ"]
-equity_data, database, updated = fetch_equity_data(symbols, database)
-save_data_to_json(equity_data, "output.json")
+for key in input.keys():
+    for kind in input[key].keys():
+        symbols = input[key][kind]
+        data, database, updated = fetch_data(symbols, database, key, kind)
+        save_data_to_json(data, f"outputs/{key}-{kind}-output.json")
 
 if updated:
     save_data_to_json(database, "database.json")

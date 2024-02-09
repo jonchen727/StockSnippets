@@ -1,0 +1,21 @@
+{
+  "Q1-24": {
+    "EQUITY" : [
+      "AAPL", 
+      "GOOGL", 
+      "TSLA", 
+      "AMZN",
+      "BA", 
+      "AVGO", 
+      "TSM", 
+      "PBR",
+      "ROKU",
+      "NFLX"
+    ],
+    "ETF": [
+      "SPY",
+      "QQQ",
+      "IWM"
+    ]
+  }
+}
